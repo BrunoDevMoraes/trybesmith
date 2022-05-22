@@ -7,8 +7,8 @@ const getAllModel = async () => {
 };
 
 const createProductModel = async (name: string, amount: string) => {
-  const query2 = 'INSERT INTO Trybesmith.Products (name, amount) VALUES (?, ?)';
-  const [result] = await connection.execute<OkPacket>(query2, [name, amount]);
+  const query = 'INSERT INTO Trybesmith.Products (name, amount) VALUES (?, ?)';
+  const [result] = await connection.execute<OkPacket>(query, [name, amount]);
   return { id: result.insertId, name, amount };
 };
 

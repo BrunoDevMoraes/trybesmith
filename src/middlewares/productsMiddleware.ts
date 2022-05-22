@@ -2,9 +2,8 @@ import { Request, Response, NextFunction } from 'express';
 import { nameVerification, amountVerification } from '../helpers/productsHelpers';
 
 const checkProductBody = (req: Request, res: Response, next: NextFunction) => {
-  const { name, amount } = req.body;
-  const nameStatus = nameVerification(name);
-  const amountStatus = amountVerification(amount);
+  const nameStatus = nameVerification(req.body.name);
+  const amountStatus = amountVerification(req.body.amount);
   if (nameStatus !== true) {
     return res.status(nameStatus.status).json({ message: nameStatus.message });
   }
