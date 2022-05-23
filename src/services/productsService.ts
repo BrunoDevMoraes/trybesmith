@@ -1,7 +1,7 @@
 import productsModel from '../models/productsModel';
 
 const getAllService = () => {
-  const allProducts = productsModel.getAllModel();
+  const allProducts = productsModel.getAllProductsModel();
   return allProducts;
 };
 
