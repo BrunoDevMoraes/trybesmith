@@ -6,7 +6,7 @@ const createUserModel = async (
   classe: string,
   level: number,
   password: string,
-): Promise<number> => {
+) => {
   const string1 = 'INSERT INTO Trybesmith.Users ';
   const string2 = '(username, classe, level, password) VALUES (?, ?, ?, ?)';
   const query = string1 + string2;
